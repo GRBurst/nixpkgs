@@ -16222,6 +16222,8 @@ with pkgs;
 
   pidginwindowmerge = callPackage ../applications/networking/instant-messengers/pidgin-plugins/window-merge { };
 
+  purple-gnome-keyring = callPackage ../applications/networking/instant-messengers/pidgin-plugins/purple-gnome-keyring { };
+
   purple-hangouts = callPackage ../applications/networking/instant-messengers/pidgin-plugins/purple-hangouts { };
 
   purple-matrix = callPackage ../applications/networking/instant-messengers/pidgin-plugins/purple-matrix { };
