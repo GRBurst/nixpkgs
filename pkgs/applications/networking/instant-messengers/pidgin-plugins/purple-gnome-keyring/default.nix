@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, pkgconfig, pidgin, json_glib, glib, libsecret, dbus, dbus_glib } :
+{ stdenv, fetchFromGitHub, pidgin, json_glib, glib, libsecret, dbus, dbus_glib } :
 
 let
   version = "v1.1.3";
@@ -13,10 +13,8 @@ stdenv.mkDerivation rec {
     sha256 = "06z2kp5hnd2vs9sk775mwhpxg2hf27c9a3yfwgr87g8affb1i0yh";
   };
 
-  nativeBuildInputs = [ pkgconfig ];
   buildInputs = [ pidgin dbus json_glib dbus_glib glib libsecret ];
 
-  makeFlags = "PREFIX=$(out)";
   buildPhase = ''
     make
   '';
