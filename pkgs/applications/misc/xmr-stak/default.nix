@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchFromGitHub, cmake, libuv, libmicrohttpd, openssl
+{ stdenv, lib, fetchFromGitHub, cmake, overrideCC, gcc5, libuv, libmicrohttpd, openssl
 , opencl-headers, ocl-icd, hwloc, cudatoolkit
 , devDonationLevel ? "0.0"
 , cudaSupport ? false
@@ -16,12 +16,17 @@ stdenv.mkDerivation rec {
     sha256 = "0n21y37d8khgfk9965mrhnh6y5ag7w0s6as1fmf76yx6vajvajsn";
   };
 
+  stdenv =  if cudaSupport then
+              overrideCC stdenv gcc5
+            else
+              stdenv;
+
   NIX_CFLAGS_COMPILE = "-O3";
 
   cmakeFlags = lib.optional (!cudaSupport) "-DCUDA_ENABLE=OFF"
     ++ lib.optional (!openclSupport) "-DOpenCL_ENABLE=OFF";
 
-  nativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ] ++ lib.optional (cudaSupport) gcc5;
   buildInputs = [ libmicrohttpd openssl hwloc ]
     ++ lib.optional cudaSupport cudatoolkit
     ++ lib.optionals openclSupport [ opencl-headers ocl-icd ];
