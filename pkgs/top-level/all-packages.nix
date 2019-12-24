@@ -26574,4 +26574,8 @@ in
 
   btcdeb = callPackage ../applications/blockchains/btcdeb {};
 
+  flutterPackages =
+    recurseIntoAttrs (callPackage ../development/compilers/flutter { });
+  flutter = flutterPackages.stable;
+
 }
