@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, unzip, version ? "2.0.0" }:
+{ stdenv, fetchurl, unzip, version ? "2.7.0" }:
 
 let
 
@@ -40,6 +40,10 @@ let
     "2.0.0-dev.26.0-i686-linux" = fetchurl {
       url = "${dev}/${version}/sdk/dartsdk-linux-ia32-release.zip";
       sha256 = "83ba8b64c76f48d8de4e0eb887e49b7960053f570d27e7ea438cc0bac789955e";
+    };
+    "2.7.0-x86_64-linux" = fetchurl {
+      url = "${stable}/${version}/sdk/dartsdk-linux-x64-release.zip";
+      sha256 = "65844622eb095be903d057d78af4826bfc204d8ea156f77a14b954520f019827";
     };
   };
 
