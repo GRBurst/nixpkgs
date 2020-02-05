@@ -1,18 +1,15 @@
-{ fetchurl, stdenv, libconfuse, yajl, alsaLib, libpulseaudio, libnl, pkgconfig
-  }:
+{ asciidoc, fetchurl, stdenv, libconfuse, yajl, alsaLib, libpulseaudio, libnl, pkgconfig, autoconf, automake, xmlto }:
 
 stdenv.mkDerivation rec {
-  name = "i3status-2.12";
+  name = "i3status-2.13";
 
   src = fetchurl {
     url = "https://i3wm.org/i3status/${name}.tar.bz2";
-    sha256 = "06krpbijv4yi33nypg6qcn4hilcrdyarsdpd9fmr2cq46qaqiikg";
+    sha256 = "0rhlzb96mw64z2jnhwz9nibc7pxg549626lz5642xxk5hpzwk2ff";
   };
 
-  nativeBuildInputs = [ pkgconfig ];
-  buildInputs = [ libconfuse yajl alsaLib libpulseaudio libnl ];
-
-  makeFlags = [ "all" "PREFIX=$(out)" ];
+  nativeBuildInputs = [ autoconf automake pkgconfig ];
+  buildInputs = [ asciidoc libconfuse yajl alsaLib libpulseaudio libnl xmlto ];
 
   meta = {
     description = "A tiling window manager";
