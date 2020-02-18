@@ -19,13 +19,13 @@ let
       url = "${base}/${stable_version}/release/${version}/sdk/dartsdk-linux-${i686}-release.zip";
       sha256 = "0cggr1jbhzahmazlhba0vw2chz9zxd98jgk6zxvxdnw5hvkx8si1";
     };
-    "2.8.0-dev.5.0-x86_64-linux" = fetchurl {
+    "2.8.0-dev.9.0-x86_64-linux" = fetchurl {
       url = "${base}/${dev_version}/release/${version}/sdk/dartsdk-linux-${x86_64}-release.zip";
-      sha256 = "0dshgpcd4idnh9cd2dcgjyq4c8dcdng2zbcrq91c5jbsm1f9nvy4";
+      sha256 = "1i1jmmmnljda0zwh8cf2k31635rg7yr1rm4nxsibxvgv6nma1czj";
     };
-    "2.8.0-dev.5.0-i686-linux" = fetchurl {
+    "2.8.0-dev.9.0-i686-linux" = fetchurl {
       url = "${base}/${dev_version}/release/${version}/sdk/dartsdk-linux-${i686}-release.zip";
-      sha256 = "0rwsb7c7sr758l42my5fkr0nqvzpkg7cvf82c9zvjjax0qwlx3j8";
+      sha256 = "1k9hs8f94zqgkb6vacqjv10bxpvhwr6imzz1n5cl1w5im98ww9rz";
     };
   };
 
