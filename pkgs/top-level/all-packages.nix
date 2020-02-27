@@ -25675,6 +25675,8 @@ in
 
   vokoscreen = libsForQt5.callPackage ../applications/video/vokoscreen { };
 
+  vokoscreenNG = libsForQt5.callPackage ../applications/video/vokoscreenNG { };
+
   vttest = callPackage ../tools/misc/vttest { };
 
   wacomtablet = libsForQt5.callPackage ../tools/misc/wacomtablet { };
