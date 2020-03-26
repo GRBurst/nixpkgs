@@ -16,15 +16,15 @@ in {
   beta = mkFlutter {
     pname = "flutter-beta";
     channel = "beta";
-    version = "1.14.6";
-    sha256Hash = "1a79pr741zkr39p5gc3p9x59d70vm60hpz2crgc53ysglj4ycigy";
+    version = "1.15.17";
+    sha256Hash = "0iil6y6y477dhjgzx54ab5m9nj0jg4xl8x4zzd9iwh8m756r7qsd";
     patches = getPatches ./patches/beta;
   };
   dev = mkFlutter {
     pname = "flutter-dev";
     channel = "dev";
-    version = "1.15.3";
-    sha256Hash = "06mawwqf7q7wdmzlyxlrlblhnnk4ckf3vp92lplippdh3d52r93i";
+    version = "1.16.2";
+    sha256Hash = "16sy9wbdpiqfhgs6nbgswfy2qpv923z4c3524nsj3knhlg2dfdr8";
     patches = getPatches ./patches/dev;
   };
 }
